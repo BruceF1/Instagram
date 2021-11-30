@@ -1,10 +1,5 @@
 <%= simple_form_for @pic, html: { multipart: true } do |f| %>
-    <%= if @pic.errors.any? %>
-    <h2><%= pluralize(@pic.errors.count, 'error') %></h2>
-    <ul> 
-        <%= @pic.errors.full_message.each do |msg|
-        <li><%= msg %></li>
-    </ul>
+#errors
     
 
   <div class = form-group >
