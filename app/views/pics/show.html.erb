@@ -5,5 +5,9 @@
 
 <%= link_to "Back", root_path %>
 <%= link_to "Edit", edit_pic_path %>
+<%= link_to like_pic_path(@pic), method: :put, class: "btn btn-default" do %>
+<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+
+<% end %>
 <%= link_to "Delete", pic_path, method: :delete %>
 
