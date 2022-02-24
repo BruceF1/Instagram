@@ -1,13 +1,15 @@
-<h1><%= @pic.title %></h1>
-<p><%= @pic.description %></p>
-<%= image_tag @pic.image, alt: 'icon' %>
-<p>This picture is by <%= @pic.user.email %></p>
+<div class="card" style="width: 18rem;">
+    <%= image_tag @pic.image, alt: 'icon', class: "card-img-top" %>
+  <div class="card-body">
+    <h3 class="card-title"><%= @pic.title %></h3>
+    <p class="card-text"><%= @pic.description %></p>
+    <small class="card-subtitle mb-2 text-muted">This picture is by <%= @pic.user.email %></p>
+    <%= link_to "Back", root_path, class:"btn btn-primary" %>
+    <%= link_to like_pic_path(@pic), method: :put, class: "btn btn-default glyphicon glyphicon-thumbs-up" do %>
+    <%= @pic.get_likes.size %>
+    <% end %>
+    <%= link_to "Delete", pic_path, method: :delete, class:"btn btn-primary" %>
+  </div>
+</div>
 
-<%= link_to "Back", root_path %>
-<%= link_to "Edit", edit_pic_path %>
-<%= link_to like_pic_path(@pic), method: :put, class: "btn btn-default" do %>
-<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-
-<% end %>
-<%= link_to "Delete", pic_path, method: :delete %>
 

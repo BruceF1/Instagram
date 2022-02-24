@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.1'
 
+gem "devise-i18n"
+gem "devise-bootstrap5"
 gem 'acts_as_votable'
 gem 'devise', '~> 4.8'
 gem 'jquery-rails'
